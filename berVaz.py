@@ -18,7 +18,7 @@ def sim(n, plotTool='text'):
     i = 0
     while i < len(n):
         if N[i] == 1:
-            circuit.cx(i,len(n))
+            circuit.cx(len(N) - (i+1),len(n))
         i+=1
         
     circuit.barrier()
@@ -45,7 +45,7 @@ def run(n,plotTool='text',device='ibmq_16_melbourne'):
     i = 0
     while i < len(n):
         if N[i] == 1:
-            circuit.cx(i,len(n))
+            circuit.cx(len(N) - (i+1),len(n))
         i+=1
         
     circuit.barrier()
